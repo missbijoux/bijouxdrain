@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bijouxdrain</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Consent / entry gate -->
+  <div id="gate" class="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <div class="gate-card">
+      <h1 id="gate-title" class="gate-title">bijouxdrain</h1>
+      <p class="gate-sub" id="gate-tagline"></p>
+
+      <div class="gate-info">
+        <p>This is an <strong>18+ consensual</strong> experience. Before you enter, please read:</p>
+        <ul>
+          <li><strong>Nothing is automatic.</strong> No payment is ever taken without you. Each gift only happens when <em>you</em> tap it and confirm the purchase on Throne yourself.</li>
+          <li><strong>You are in control.</strong> There is always a visible <strong>Stop</strong> button, and you can close this tab at any time to end everything instantly.</li>
+          <li><strong>Spend within your means.</strong> Only send what you genuinely choose to. There is no obligation and no pressure.</li>
+        </ul>
+      </div>
+
+      <label class="consent-row">
+        <input type="checkbox" id="consent-check" />
+        <span>I'm 18+ and I understand I control every gift. I can stop or leave any time.</span>
+      </label>
+
+      <div class="gate-actions">
+        <button id="enter-btn" class="btn btn-primary" disabled>Enter</button>
+        <a id="leave-link" class="btn btn-ghost" href="about:blank">Leave</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main experience -->
+  <main id="app" class="app hidden">
+    <header class="topbar">
+      <div class="brand">
+        <img id="brand-logo" class="brand-logo" alt="" hidden />
+        <div>
+          <div id="brand-name" class="brand-name"></div>
+          <a id="brand-throne" class="brand-throne" target="_blank" rel="noopener">on Throne ↗</a>
+        </div>
+      </div>
+      <button id="stop-btn" class="btn btn-stop">■ Stop &amp; Exit</button>
+    </header>
+
+    <section class="meter-wrap">
+      <div class="meter-label">Gifts you've chosen to send</div>
+      <div id="meter-total" class="meter-total">$0</div>
+      <div class="meter-sub"><span id="meter-count">0</span> gift(s) · you decided every one 💝</div>
+      <button id="reset-btn" class="btn btn-tiny">reset counter</button>
+    </section>
+
+    <section class="items" id="items"></section>
+
+    <footer class="foot">
+      <p>Every tap opens Throne, where you complete the real purchase yourself. Close the tab any time to stop.</p>
+    </footer>
+  </main>
+
+  <div id="image-layer" class="image-layer" aria-hidden="true"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
