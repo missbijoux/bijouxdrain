@@ -1,0 +1,171 @@
+/* bijouxdrain overlay — injected by the extension on throne.com/bijoux.
+   All ids/classes are namespaced with `bjx-` to avoid clashing with Throne. */
+
+/* Root container is click-through so Throne stays fully usable underneath. */
+#bjx-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483600;
+  pointer-events: none;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+#bjx-overlay.bjx-hidden { display: none !important; }
+
+/* Floating images: purely decorative, never capture clicks. */
+.bjx-img {
+  position: fixed;
+  max-width: 320px;
+  max-height: 320px;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.bjx-img.bjx-show { transform: scale(1); }
+
+/* Interactive bits re-enable pointer events explicitly. */
+.bjx-panel,
+.bjx-consent,
+.bjx-reopen { pointer-events: auto; }
+
+/* Control / brand panel (bottom-right by default; draggable). */
+.bjx-panel {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 250px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(42, 19, 32, 0.92);
+  color: #ffeaf4;
+  border: 1px solid rgba(255, 142, 201, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+.bjx-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 142, 201, 0.2);
+  cursor: move;
+  user-select: none;
+}
+.bjx-title {
+  font-weight: 800;
+  font-size: 16px;
+  background: linear-gradient(135deg, #ff8ec9, #ff2d8b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bjx-head-btns { display: flex; gap: 6px; }
+.bjx-iconbtn {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffeaf4;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bjx-iconbtn:hover { background: rgba(255, 45, 139, 0.5); }
+
+.bjx-meter {
+  text-align: center;
+  padding: 12px 14px 6px;
+}
+.bjx-meter-total {
+  font-size: 30px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff8ec9, #ff2d8b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bjx-meter-sub { font-size: 11px; color: #d59ebb; }
+
+.bjx-gifts {
+  overflow-y: auto;
+  padding: 8px 10px 12px;
+}
+.bjx-gift {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffeaf4;
+  border: 1px solid rgba(255, 142, 201, 0.18);
+  border-radius: 10px;
+  padding: 9px 11px;
+  margin-bottom: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.bjx-gift:hover { background: rgba(255, 45, 139, 0.25); border-color: #ff8ec9; }
+.bjx-gift-name { display: flex; align-items: center; gap: 7px; }
+.bjx-gift-price { font-weight: 800; color: #ff8ec9; white-space: nowrap; }
+
+/* Consent bar (bottom, temporary). */
+.bjx-consent {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  max-width: 92vw;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(26, 11, 20, 0.96);
+  color: #ffeaf4;
+  border: 1px solid rgba(255, 142, 201, 0.4);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+}
+.bjx-consent span { max-width: 420px; line-height: 1.5; }
+.bjx-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.bjx-btn-primary { background: linear-gradient(135deg, #ff2d8b, #c01e68); color: #fff; }
+.bjx-btn-ghost { background: transparent; color: #d59ebb; border: 1px solid rgba(255, 142, 201, 0.4); }
+
+/* Small re-open pill if the overlay is closed. */
+.bjx-reopen {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #ff2d8b, #c01e68);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(255, 45, 139, 0.45);
+}

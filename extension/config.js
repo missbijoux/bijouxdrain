@@ -170,4 +170,17 @@ window.BIJOUX_CONFIG = {
     spawnIntervalMs: 1500,
     maxOnScreen: 12,
   },
+
+  // ---- Overlay (Chrome extension only) ----
+  // Controls how the experience is layered over throne.com/bijoux.
+  overlay: {
+    // Transparency of the floating images (0 = invisible, 1 = solid).
+    // Lower = you see more of the Throne page underneath.
+    imageOpacity: 0.55,
+    // Start the overlay automatically when you open throne.com/bijoux?
+    // (You can always toggle it with the toolbar icon.)
+    autoStart: true,
+    // Show the gift menu panel in the overlay.
+    showGiftPanel: true,
+  },
 };

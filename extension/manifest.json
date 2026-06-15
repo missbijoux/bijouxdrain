@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "bijouxdrain",
+  "version": "1.0",
+  "description": "Bijoux-branded ambient overlay for throne.com/bijoux: floating images + one-tap gifting. No payment automation; click-through, non-trapping.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://throne.com/*",
+    "http://localhost:3000/*",
+    "https://*.up.railway.app/*"
+  ],
+  "action": {
+    "default_title": "Toggle bijouxdrain overlay"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://throne.com/bijoux*"],
+      "css": ["overlay.css"],
+      "js": ["config.js", "overlay.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
