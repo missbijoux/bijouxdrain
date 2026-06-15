@@ -167,8 +167,8 @@
     img.className = "pop-img";
     img.src = url;
     img.alt = "";
-    img.style.left = Math.random() * Math.max(0, window.innerWidth - 240) + "px";
-    img.style.top = Math.random() * Math.max(0, window.innerHeight - 240) + "px";
+    img.style.left = Math.random() * Math.max(0, window.innerWidth - 440) + "px";
+    img.style.top = Math.random() * Math.max(0, window.innerHeight - 440) + "px";
     img.onerror = () => img.remove();
 
     imageLayer.appendChild(img);

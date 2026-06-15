@@ -212,8 +212,8 @@ html, body {
 }
 .pop-img {
   position: fixed;
-  max-width: 240px;
-  max-height: 240px;
+  max-width: 440px;
+  max-height: 440px;
   border-radius: 12px;
   box-shadow: 0 8px 28px rgba(0,0,0,0.45);
   opacity: 0;
