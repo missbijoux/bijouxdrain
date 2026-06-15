@@ -14,8 +14,8 @@
 /* Floating images: purely decorative, never capture clicks. */
 .bjx-img {
   position: fixed;
-  max-width: 320px;
-  max-height: 320px;
+  max-width: 440px;
+  max-height: 440px;
   width: auto;
   height: auto;
   border-radius: 12px;
