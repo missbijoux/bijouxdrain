@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "bijouxdrain",
   "version": "1.0",
-  "description": "Bijoux-branded ambient overlay for throne.com/bijoux: floating images + one-tap gifting. No payment automation; click-through, non-trapping.",
+  "description": "Bijoux-branded overlay for throne.com/bijoux: floating images and a one-tap gift menu. Nothing automated - you stay in control.",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
